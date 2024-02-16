@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic/Home/Hadeth/hadeth_details_screen.dart';
 import 'package:islamic/Home/home_screen.dart';
 
 import 'Home/Quran/sura_content.dart';
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(cardColor: Colors.white,
+      theme: ThemeData(
+          cardColor: Colors.white,
           bottomNavigationBarTheme: const BottomNavigationBarThemeData(
               selectedIconTheme: IconThemeData(size: 40),
               selectedItemColor: Colors.black,
@@ -32,6 +34,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName: (context) => const HomeScreen(),
         SplashScreen.routeName: (context) => const SplashScreen(),
         SuraContent.routeName: (context) => const SuraContent(),
+        HadethDetailsScreen.routeName: (context) => const HadethDetailsScreen(),
       },
       initialRoute: SplashScreen.routeName,
       debugShowCheckedModeBanner: false,
