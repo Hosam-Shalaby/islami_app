@@ -245,30 +245,28 @@ class QuranTab extends StatelessWidget {
         Expanded(
             flex: 1,
             child: Image.asset('assets/images/qur2an_screen_logo.png')),
-        const Divider(
-          color: Color(0xFFB7935F),
+        Divider(
+          color: Theme.of(context).dividerColor,
           height: 17,
           thickness: 2,
         ),
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('عدد الآيات',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18)),
-            VerticalDivider(color: Color(0xFFB7935F), width: 50),
-            Text(' أسم السورة',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18)),
+            Text(
+              'عدد الآيات',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            VerticalDivider(color: Theme.of(context).dividerColor, width: 50),
+            Text(
+              ' أسم السورة',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
             // Divider(color: Color(0xFFB7935F)),
           ],
         ),
-        const Divider(
-          color: Color(0xFFB7935F),
+        Divider(
+          color: Theme.of(context).dividerColor,
           height: 17,
           thickness: 2,
         ),
@@ -278,11 +276,12 @@ class QuranTab extends StatelessWidget {
               itemBuilder: (context, index) =>
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 SuraName(
-                  suraArgs: SuraArgs(
-                      Title: versesNumber[index], Index: index),
+                  suraArgs: SuraArgs(Title: versesNumber[index], Index: index),
                 ),
-                const VerticalDivider(
-                    color: Color(0xFFB7935F), width: 50, thickness: 1),
+                VerticalDivider(
+                    color: Theme.of(context).dividerColor,
+                    width: 50,
+                    thickness: 1),
                 SuraName(
                   suraArgs: SuraArgs(Title: suraNames[index], Index: index),
                 )
@@ -293,7 +292,7 @@ class QuranTab extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 60, vertical: 12),
                 height: 1,
                 width: double.infinity,
-                color: const Color(0xFFB7935F),
+                color: Theme.of(context).dividerColor,
               ),
             ))
       ],

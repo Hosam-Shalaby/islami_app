@@ -17,8 +17,7 @@ class SuraName extends StatelessWidget {
       },
       child: Text(
         suraArgs.Title.toString(),
-        style:
-            const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        style: Theme.of(context).textTheme.titleMedium,
       ),
     );
   }

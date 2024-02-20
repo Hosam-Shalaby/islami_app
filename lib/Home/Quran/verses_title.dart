@@ -10,9 +10,10 @@ class VersesTitle extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(7),
       alignment: Alignment.center,
-      child: Text(versesTitle,
-          style: const TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold)),
+      child: Text(
+        versesTitle,
+        style: Theme.of(context).textTheme.bodyMedium,
+      ),
     );
   }
 }
