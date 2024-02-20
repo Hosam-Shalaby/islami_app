@@ -27,19 +27,19 @@ class _HadethTabState extends State<HadethTab> {
                 height: 180,
               ),
               Container(
-                color: const Color(0xFFB7935F),
+                color: Theme.of(context).dividerColor,
                 width: double.infinity,
                 height: 2,
               ),
-              const Padding(
-                padding: EdgeInsets.all(5.0),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
                 child: Text(
                   'ahadeth',
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
               ),
               Container(
-                color: const Color(0xFFB7935F),
+                color: Theme.of(context).dividerColor,
                 width: double.infinity,
                 height: 2,
               ),
@@ -49,7 +49,7 @@ class _HadethTabState extends State<HadethTab> {
                         HadethTitle(hadeth: ahadeth[index]),
                     separatorBuilder: (context, index) => Container(
                           margin: const EdgeInsets.symmetric(horizontal: 33),
-                          color: const Color(0xFFB7935F),
+                          color: Theme.of(context).dividerColor,
                           width: double.infinity,
                           height: 2,
                         ),
