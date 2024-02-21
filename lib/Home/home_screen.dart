@@ -7,6 +7,7 @@ import 'package:islamic/Home/Radio/radio_tab.dart';
 import 'package:islamic/Home/Sebha/sebha_tab.dart';
 import 'package:islamic/Home/settings/settings_tab.dart';
 import 'package:islamic/Styles/theme_data.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'Home-Screen';
@@ -42,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
             title: Text(
-          'Islami',
+          AppLocalizations.of(context)!.app_title,
           style: Theme.of(context).textTheme.titleMedium,
         )),
         body: tabs[selectedIndexItem],
@@ -58,26 +59,26 @@ class _HomeScreenState extends State<HomeScreen> {
                 backgroundColor: Theme.of(context).primaryColor,
                 icon:
                     const ImageIcon(AssetImage("assets/images/icon_quran.png")),
-                label: 'Quran'),
+                label: AppLocalizations.of(context)!.quran_tab),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
                 icon: const ImageIcon(
                     AssetImage("assets/images/icon_hadeth.png")),
-                label: 'Hadeth'),
+                label: AppLocalizations.of(context)!.hadeth_tab),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
                 icon:
                     const ImageIcon(AssetImage("assets/images/icon_sebha.png")),
-                label: 'Sebha'),
+                label: AppLocalizations.of(context)!.sebha_tab),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
                 icon:
                     const ImageIcon(AssetImage("assets/images/icon_radio.png")),
-                label: 'Radio'),
+                label: AppLocalizations.of(context)!.radio_tab),
             BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).primaryColor,
                 icon: const Icon(Icons.settings),
-                label: 'Settings'),
+                label: AppLocalizations.of(context)!.settings_tab),
           ],
         ),
       ),
