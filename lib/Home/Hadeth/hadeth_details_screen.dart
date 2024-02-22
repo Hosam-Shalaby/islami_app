@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamic/Home/Hadeth/hadeth_tab.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../Providers/settings_provider.dart';
 
@@ -18,7 +19,7 @@ class HadethDetailsScreen extends StatelessWidget {
               fit: BoxFit.fill,
               image: AssetImage(settingsProvider.getBackGround()))),
       child: Scaffold(
-        appBar: AppBar(title: const Text('Islami')),
+        appBar: AppBar(title:  Text((AppLocalizations.of(context)!.app_title))),
         body: SingleChildScrollView(
           child: Card(
               color: Theme.of(context).cardColor,

@@ -6,6 +6,10 @@
     "radio_tab" : "راديو",
     "settings_tab" : "الإعدادات",
     "theme" : "النمط",
-    "language" : "اللغة"
-    
+    "language" : "اللغة",
+    "ahadeth" : "الأحاديث",
+    "dark" : "مظلم",
+    "light" : "مضئ",
+    "arabic" : "العربية",
+    "english" : "الانجليزية"
 }

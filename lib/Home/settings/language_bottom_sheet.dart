@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamic/Home/Providers/settings_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LanguageBottomSheet extends StatelessWidget {
   const LanguageBottomSheet({super.key});
@@ -19,8 +20,8 @@ class LanguageBottomSheet extends StatelessWidget {
               settingsProvider.changeLanguage('en');
             },
             child: settingsProvider.currentLanguage == 'en'
-                ? getSelectedItem('English')
-                : getUnSelectedItem('English'),
+                ? getSelectedItem((AppLocalizations.of(context)!.english))
+                : getUnSelectedItem((AppLocalizations.of(context)!.english)),
           ),
           const Divider(),
           InkWell(
@@ -28,8 +29,8 @@ class LanguageBottomSheet extends StatelessWidget {
               settingsProvider.changeLanguage('ar');
             },
             child: settingsProvider.currentLanguage == 'ar'
-                ? getSelectedItem('Arabic')
-                : getUnSelectedItem('Arabic'),
+                ? getSelectedItem((AppLocalizations.of(context)!.arabic))
+                : getUnSelectedItem((AppLocalizations.of(context)!.arabic)),
           ),
         ],
       ),

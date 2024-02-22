@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamic/Home/Providers/settings_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ThemeBottomSheet extends StatelessWidget {
   const ThemeBottomSheet({super.key});
@@ -19,16 +20,16 @@ class ThemeBottomSheet extends StatelessWidget {
                 settingsProvider.changeTheme(ThemeMode.light);
               },
               child: settingsProvider.currentTheme == ThemeMode.light
-                  ? getSelectedItem('Light')
-                  : getUnSelectedItem('Light')),
+                  ? getSelectedItem((AppLocalizations.of(context)!.light))
+                  : getUnSelectedItem((AppLocalizations.of(context)!.light))),
           const Divider(),
           InkWell(
               onTap: () {
                 settingsProvider.changeTheme(ThemeMode.dark);
               },
               child: settingsProvider.currentTheme == ThemeMode.dark
-                  ? getSelectedItem('Dark')
-                  : getUnSelectedItem('Dark')),
+                  ? getSelectedItem((AppLocalizations.of(context)!.dark))
+                  : getUnSelectedItem((AppLocalizations.of(context)!.dark))),
         ],
       ),
     );

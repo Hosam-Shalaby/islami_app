@@ -45,7 +45,7 @@ class _SuraContentState extends State<SuraContent> {
                   child: ListView.separated(
                     itemBuilder: (context, index) =>
                         // VersesTitle(versesTitle: verses[index],),
-                        Text('(${index + 1}) ${verses[index]} ',
+                        Text(' ${verses[index]} (${index + 1})',
                             textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.bodyMedium),
                     itemCount: verses.length,

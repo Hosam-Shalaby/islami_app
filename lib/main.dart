@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: const [
         Locale('en'), // English
-        Locale('ar'), // Spanish
+        Locale('ar'), // arabic
       ],
       locale: Locale(settingsProvider.currentLanguage),
       themeMode: settingsProvider.currentTheme,
