@@ -3,6 +3,7 @@ import 'package:islamic/Home/Providers/settings_provider.dart';
 import 'package:islamic/Home/settings/language_bottom_sheet.dart';
 import 'package:islamic/Home/settings/theme_bottom_sheet.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsTab extends StatefulWidget {
   const SettingsTab({super.key});
@@ -20,9 +21,9 @@ class _SettingsTabState extends State<SettingsTab> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text('Theme'),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(AppLocalizations.of(context)!.theme),
           ),
           InkWell(
             onTap: () {
@@ -37,13 +38,13 @@ class _SettingsTabState extends State<SettingsTab> {
                   border: Border.all(color: const Color(0xFFB7935F), width: 2)),
               child: Center(
                   child: Text(settingsProvider.currentTheme == ThemeMode.light
-                      ? 'Light'
-                      : 'Dark')),
+                      ? (AppLocalizations.of(context)!.light)
+                      : (AppLocalizations.of(context)!.dark))),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text('Language'),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text((AppLocalizations.of(context)!.language)),
           ),
           InkWell(
             onTap: () {
@@ -56,7 +57,11 @@ class _SettingsTabState extends State<SettingsTab> {
                   borderRadius: BorderRadius.circular(15),
                   // color: Colors.black,
                   border: Border.all(color: const Color(0xFFB7935F), width: 2)),
-              child: const Center(child: Text('English')),
+              child: Center(
+                  child: Text(
+                      settingsProvider.currentLanguage == const Locale('en')
+                          ? (AppLocalizations.of(context)!.english)
+                          : (AppLocalizations.of(context)!.arabic))),
             ),
           ),
         ],

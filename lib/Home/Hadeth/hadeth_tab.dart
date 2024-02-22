@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamic/Home/Hadeth/hadeth_title.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadethTab extends StatefulWidget {
   const HadethTab({super.key});
@@ -34,7 +35,7 @@ class _HadethTabState extends State<HadethTab> {
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: Text(
-                  'ahadeth',
+                  AppLocalizations.of(context)!.ahadeth,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
               ),
@@ -48,11 +49,10 @@ class _HadethTabState extends State<HadethTab> {
                     itemBuilder: (context, index) =>
                         HadethTitle(hadeth: ahadeth[index]),
                     separatorBuilder: (context, index) => Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 33),
-                          color: Theme.of(context).dividerColor,
-                          width: double.infinity,
-                          height: 2,
-                        ),
+                        margin: const EdgeInsets.symmetric(horizontal: 33),
+                        color: Theme.of(context).dividerColor,
+                        width: double.infinity,
+                        height: 2),
                     itemCount: ahadeth.length),
               )
             ],

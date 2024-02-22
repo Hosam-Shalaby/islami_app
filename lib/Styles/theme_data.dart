@@ -7,12 +7,12 @@ class MyThemeData {
   static ThemeData lightTheme = ThemeData(
       dividerColor: lightPrimaryColor,
       primaryColor: lightPrimaryColor,
-      cardColor: lightPrimaryColor,
+      // cardColor: lightPrimaryColor,
       textTheme: const TextTheme(
           headlineMedium: TextStyle(
-              fontSize: 25, fontWeight: FontWeight.w600, color: Colors.black),
+              fontSize: 22, fontWeight: FontWeight.w600, color: Colors.black),
           titleMedium: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 25, color: Colors.black),
+              fontWeight: FontWeight.bold, fontSize: 17, color: Colors.black),
           bodyMedium: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.normal,
@@ -30,7 +30,7 @@ class MyThemeData {
           titleTextStyle: TextStyle(
               color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold)));
   static ThemeData darkTheme = ThemeData(
-      dividerColor: Colors.amber,
+      dividerColor: const Color.fromARGB(255, 224, 186, 32),
       primaryColor: darkPrimaryColor,
       cardColor: darkPrimaryColor,
       textTheme: const TextTheme(
@@ -41,10 +41,10 @@ class MyThemeData {
           bodyMedium: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.normal,
-              color: Colors.yellow)),
+              color: Color.fromARGB(255, 224, 207, 52))),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           selectedIconTheme: IconThemeData(size: 40),
-          selectedItemColor: Colors.yellow,
+          selectedItemColor: Color.fromARGB(255, 218, 202, 60),
           unselectedItemColor: Colors.white),
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: const AppBarTheme(

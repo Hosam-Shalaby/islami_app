@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 
-class SebhaTab extends StatelessWidget {
+class SebhaTab extends StatefulWidget {
   const SebhaTab({super.key});
 
+  @override
+  State<SebhaTab> createState() => _SebhaTabState();
+}
+
+class _SebhaTabState extends State<SebhaTab> {
+  double angel = 100;
+  int counter = 0;
+  int currentZekr = 0;
+  List<String> texts = ['سبحان الله', 'الحمدلله', ' الله أكبر'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +28,15 @@ class SebhaTab extends StatelessWidget {
               Container(
                   margin: const EdgeInsets.only(top: 60),
                   height: 180,
-                  child: Image.asset('assets/images/body_sebha_logo.png'))
+                  child: InkWell(
+                    onTap: () {
+                      onClick();
+                    },
+                    child: Transform.rotate(
+                        angle: angel,
+                        child:
+                            Image.asset('assets/images/body_sebha_logo.png')),
+                  ))
             ],
           ),
           const SizedBox(
@@ -32,24 +49,75 @@ class SebhaTab extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                width: 40,
-                height: 60,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  border: Border.all(width: 1),
-                  color: Theme.of(context).primaryColor,
-                ),
-                child: const Center(
-                  child: Text(
-                    '30',
+              InkWell(
+                onTap: () {
+                  onClick();
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  height: 60,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    border: Border.all(width: 1),
+                    color: Theme.of(context).primaryColor,
+                  ),
+                  child: Center(
+                    child: Text(
+                      '$counter',
+                    ),
                   ),
                 ),
               )
             ],
-          )
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              InkWell(
+                onTap: () {
+                  onClick();
+                },
+                child: Container(
+                  // width: 100,
+                  height: 60,
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    border: Border.all(width: 1),
+                    color: Theme.of(context).primaryColor,
+                  ),
+                  child: Center(
+                    child: Text(
+                      texts[currentZekr],
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
         ],
       ),
     );
+  }
+
+  onClick() {
+    // rotate photo
+    angel++;
+    // change zekr text
+    if (counter == 33) {
+      currentZekr++;
+    }
+    currentZekr = currentZekr % texts.length;
+    // change counter
+    if (counter >= 33) {
+      counter = 0;
+    } else {
+      counter++;
+    }
+
+    setState(() {});
   }
 }
