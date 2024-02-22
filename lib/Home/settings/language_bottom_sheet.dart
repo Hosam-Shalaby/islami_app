@@ -16,16 +16,20 @@ class LanguageBottomSheet extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              settingsProvider.changeLanguage(const Locale('en'));
+              settingsProvider.changeLanguage('en');
             },
-            child: getSelectedItem('English'),
+            child: settingsProvider.currentLanguage == 'en'
+                ? getSelectedItem('English')
+                : getUnSelectedItem('English'),
           ),
           const Divider(),
           InkWell(
             onTap: () {
-              settingsProvider.changeLanguage(const Locale('ar'));
+              settingsProvider.changeLanguage('ar');
             },
-            child: getUnSelectedItem('Arabic'),
+            child: settingsProvider.currentLanguage == 'ar'
+                ? getSelectedItem('Arabic')
+                : getUnSelectedItem('Arabic'),
           ),
         ],
       ),
@@ -49,9 +53,13 @@ class LanguageBottomSheet extends StatelessWidget {
   }
 
   Widget getUnSelectedItem(String text) {
-    return Text(
-      text,
-      style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+    return Row(
+      children: [
+        Text(
+          text,
+          style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
+      ],
     );
   }
 }
