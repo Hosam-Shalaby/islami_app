@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islamic/Home/Providers/settings_provider.dart';
 import 'package:islamic/Home/Quran/surah_title.dart';
-import 'package:islamic/Home/Quran/verses_title.dart';
-import 'package:islamic/Styles/theme_data.dart';
+import 'package:provider/provider.dart';
 
 class SuraContent extends StatefulWidget {
   const SuraContent({super.key});
@@ -17,6 +17,8 @@ class _SuraContentState extends State<SuraContent> {
 
   @override
   Widget build(BuildContext context) {
+    var settingsProvider = Provider.of<SettingsProvider>(context);
+
     var args = ModalRoute.of(context)?.settings.arguments as SuraArgs;
     if (verses.isEmpty) {
       readQuranFile(args.Index);
@@ -28,11 +30,7 @@ class _SuraContentState extends State<SuraContent> {
             decoration: BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.fill,
-                    image: AssetImage(
-                      MyThemeData.isDarkSelected
-                          ? 'assets/images/dark_bg.png'
-                          : 'assets/images/default_bg.png',
-                    ))),
+                    image: AssetImage(settingsProvider.getBackGround()))),
             child: Scaffold(
               appBar: AppBar(
                 title: Text(args.Title),
@@ -46,7 +44,10 @@ class _SuraContentState extends State<SuraContent> {
                       borderRadius: BorderRadius.circular(40)),
                   child: ListView.separated(
                     itemBuilder: (context, index) =>
-                        VersesTitle(versesTitle: verses[index]),
+                        // VersesTitle(versesTitle: verses[index],),
+                        Text('(${index + 1}) ${verses[index]} ',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodyMedium),
                     itemCount: verses.length,
                     separatorBuilder: (context, index) => Container(
                       margin: const EdgeInsets.symmetric(horizontal: 20),

@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('ar'), // Spanish
       ],
-      locale: settingsProvider.currentLanguage,
+      locale: Locale(settingsProvider.currentLanguage),
       themeMode: settingsProvider.currentTheme,
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,

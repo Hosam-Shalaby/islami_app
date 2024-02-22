@@ -18,13 +18,17 @@ class ThemeBottomSheet extends StatelessWidget {
               onTap: () {
                 settingsProvider.changeTheme(ThemeMode.light);
               },
-              child: getSelectedItem('Light')),
+              child: settingsProvider.currentTheme == ThemeMode.light
+                  ? getSelectedItem('Light')
+                  : getUnSelectedItem('Light')),
           const Divider(),
           InkWell(
               onTap: () {
                 settingsProvider.changeTheme(ThemeMode.dark);
               },
-              child: getUnSelectedItem('Dark')),
+              child: settingsProvider.currentTheme == ThemeMode.dark
+                  ? getSelectedItem('Dark')
+                  : getUnSelectedItem('Dark')),
         ],
       ),
     );
@@ -47,9 +51,13 @@ class ThemeBottomSheet extends StatelessWidget {
   }
 
   Widget getUnSelectedItem(String text) {
-    return Text(
-      text,
-      style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+    return Row(
+      children: [
+        Text(
+          text,
+          style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
+      ],
     );
   }
 }
