@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SebhaTab extends StatefulWidget {
   const SebhaTab({super.key});
@@ -23,11 +24,11 @@ class _SebhaTabState extends State<SebhaTab> {
             children: [
               Container(
                   margin: const EdgeInsets.only(left: 20),
-                  height: 80,
+                  height: 80.h,
                   child: Image.asset('assets/images/head_sebha_logo.png')),
               Container(
                   margin: const EdgeInsets.only(top: 60),
-                  height: 180,
+                  height: 180.h,
                   child: InkWell(
                     onTap: () {
                       onClick();
@@ -39,64 +40,59 @@ class _SebhaTabState extends State<SebhaTab> {
                   ))
             ],
           ),
-          const SizedBox(
-            height: 15,
+          SizedBox(
+            height: 15.h,
           ),
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text('عدد التسبيحات')],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              InkWell(
-                onTap: () {
-                  onClick();
-                },
-                child: Container(
-                  padding: const EdgeInsets.all(10),
-                  height: 60,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    border: Border.all(width: 1),
-                    color: Theme.of(context).primaryColor,
-                  ),
-                  child: Center(
-                    child: Text(
-                      '$counter',
-                    ),
-                  ),
-                ),
+              Text(
+                'عدد التسبيحات',
               )
             ],
           ),
-          const SizedBox(
-            height: 15,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              InkWell(
-                onTap: () {
-                  onClick();
-                },
-                child: Container(
-                  // width: 100,
-                  height: 60,
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    border: Border.all(width: 1),
-                    color: Theme.of(context).primaryColor,
-                  ),
-                  child: Center(
-                    child: Text(
-                      texts[currentZekr],
-                    ),
-                  ),
+          InkWell(
+            onTap: () {
+              onClick();
+            },
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 150),
+              padding: const EdgeInsets.all(10),
+              height: 60.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                // border: Border.all(width: 1),
+                color: Theme.of(context).primaryColor,
+              ),
+              child: Center(
+                child: Text(
+                  '$counter',
                 ),
-              )
-            ],
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 15.h,
+          ),
+          InkWell(
+            onTap: () {
+              onClick();
+            },
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 100),
+              height: 60.h,
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                // border: Border.all(width: 1),
+                color: Theme.of(context).primaryColor,
+              ),
+              child: Center(
+                child: Text(
+                  texts[currentZekr],
+                ),
+              ),
+            ),
           ),
         ],
       ),

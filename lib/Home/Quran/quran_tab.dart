@@ -276,15 +276,15 @@ class QuranTab extends StatelessWidget {
               itemBuilder: (context, index) =>
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 SuraName(
-                  suraArgs: SuraArgs(Title: versesNumber[index], Index: index),
+                  suraArgs: SuraArgs(Title: suraNames[index], Index: index),
                 ),
                 VerticalDivider(
                     color: Theme.of(context).dividerColor,
                     width: 50,
                     thickness: 1),
                 SuraName(
-                  suraArgs: SuraArgs(Title: suraNames[index], Index: index),
-                )
+                  suraArgs: SuraArgs(Title: versesNumber[index], Index: index),
+                ),
               ]),
               itemCount: suraNames.length,
               separatorBuilder: (BuildContext context, int index) => Container(
