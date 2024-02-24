@@ -64,7 +64,7 @@ class _SuraContentState extends State<SuraContent> {
   void readQuranFile(int index) async {
     String fileContent =
         await rootBundle.loadString('assets/files/${index + 1}.txt');
-    List<String> suraLines = fileContent.split('\n');
+    List<String> suraLines = fileContent.trim().split('\n');
     setState(() {
       verses = suraLines;
     });
