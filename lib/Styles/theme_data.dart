@@ -5,6 +5,7 @@ class MyThemeData {
   static Color darkPrimaryColor = const Color(0xFF141A2E);
   static bool isDarkSelected = true;
   static ThemeData lightTheme = ThemeData(
+      // fontFamily: 'cairo',
       dividerColor: lightPrimaryColor,
       primaryColor: lightPrimaryColor,
       // cardColor: lightPrimaryColor,
@@ -30,6 +31,7 @@ class MyThemeData {
           titleTextStyle: TextStyle(
               color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold)));
   static ThemeData darkTheme = ThemeData(
+      // fontFamily: 'cairo',
       dividerColor: const Color.fromARGB(255, 224, 186, 32),
       primaryColor: darkPrimaryColor,
       cardColor: darkPrimaryColor,

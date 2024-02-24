@@ -48,6 +48,7 @@ class _SebhaTabState extends State<SebhaTab> {
             children: [
               Text(
                 'عدد التسبيحات',
+                style: TextStyle(fontFamily: 'cairo'),
               )
             ],
           ),
