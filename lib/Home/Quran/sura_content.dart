@@ -30,7 +30,7 @@ class _SuraContentState extends State<SuraContent> {
             decoration: BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.fill,
-                    image: AssetImage(settingsProvider.getBackGround()))),
+                    image: AssetImage(settingsProvider.backgroundImage()))),
             child: Scaffold(
               appBar: AppBar(
                 title: Text(args.Title),

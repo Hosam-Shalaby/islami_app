@@ -11,10 +11,17 @@ class MyThemeData {
       // cardColor: lightPrimaryColor,
       textTheme: const TextTheme(
           headlineMedium: TextStyle(
-              fontSize: 22, fontWeight: FontWeight.w600, color: Colors.black),
+              fontFamily: 'ElMessiri',
+              fontSize: 22,
+              fontWeight: FontWeight.w600,
+              color: Colors.black),
           titleMedium: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 17, color: Colors.black),
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.bold,
+              fontSize: 17,
+              color: Colors.black),
           bodyMedium: TextStyle(
+              fontFamily: 'DecoType',
               fontSize: 20,
               fontWeight: FontWeight.normal,
               color: Colors.black)),
@@ -22,7 +29,7 @@ class MyThemeData {
           selectedIconTheme: IconThemeData(size: 40),
           selectedItemColor: Colors.black,
           unselectedItemColor: Colors.white),
-      scaffoldBackgroundColor: Colors.transparent,
+      // scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(color: Colors.black),
           centerTitle: true,
@@ -37,12 +44,19 @@ class MyThemeData {
       cardColor: darkPrimaryColor,
       textTheme: const TextTheme(
           headlineMedium: TextStyle(
-              fontSize: 25, fontWeight: FontWeight.w600, color: Colors.white),
+              fontFamily: 'ElMessiri',
+              fontSize: 25,
+              fontWeight: FontWeight.w600,
+              color: Colors.white),
           titleMedium: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 25, color: Colors.white),
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.bold,
+              fontSize: 17,
+              color: Colors.white),
           bodyMedium: TextStyle(
+              fontFamily: 'DecoType',
               fontSize: 20,
-              fontWeight: FontWeight.normal,
+              fontWeight: FontWeight.bold,
               color: Color.fromARGB(255, 224, 207, 52))),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           selectedIconTheme: IconThemeData(size: 40),

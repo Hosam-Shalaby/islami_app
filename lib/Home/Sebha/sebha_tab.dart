@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:islamic/Home/Providers/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class SebhaTab extends StatefulWidget {
   const SebhaTab({super.key});
@@ -15,6 +17,8 @@ class _SebhaTabState extends State<SebhaTab> {
   List<String> texts = ['سبحان الله', 'الحمدلله', ' الله أكبر'];
   @override
   Widget build(BuildContext context) {
+    var settingsProvider = Provider.of<SettingsProvider>(context);
+
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -41,15 +45,13 @@ class _SebhaTabState extends State<SebhaTab> {
             ],
           ),
           SizedBox(
-            height: 15.h,
+            height: 30.h,
           ),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'عدد التسبيحات',
-                style: TextStyle(fontFamily: 'cairo'),
-              )
+              Text('عدد التسبيــحات',
+                  style: Theme.of(context).textTheme.bodyMedium),
             ],
           ),
           InkWell(
@@ -68,12 +70,13 @@ class _SebhaTabState extends State<SebhaTab> {
               child: Center(
                 child: Text(
                   '$counter',
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
             ),
           ),
           SizedBox(
-            height: 15.h,
+            height: 30.h,
           ),
           InkWell(
             onTap: () {
@@ -118,3 +121,4 @@ class _SebhaTabState extends State<SebhaTab> {
     setState(() {});
   }
 }
+

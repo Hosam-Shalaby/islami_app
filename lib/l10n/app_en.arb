@@ -1,15 +1,21 @@
+
 {
-    "app_title" : "Islami",
-    "quran_tab" : "Quran",
-    "hadeth_tab" : "Hadeth",
-    "sebha_tab" : "Sebha",
-    "radio_tab" : "Radio",
-    "settings_tab" : "Settings",
-    "theme" : "Theme",
+    "islami" : "Islami",
+    "quran" : "Quran",
+    "suraName" : "Sura Name",
+    "suraNumber" : "Sura Number",
+    "hadeth" : "Hadeth",
+    "tasbeh" : "Tasbeh",
+    "numberOfTasbeh" : "Number Of Tasbeh",
+    "radio" : "Radio",
+    "quranRadioStation" : "Quran Radio Station",
+    "settings" : "Settings",
     "language" : "Language",
-    "ahadeth" : "Ahadeth",
-    "dark" : "Dark",
-    "light" : "Light",
+    "english" : "English",
     "arabic" : "Arabic",
-    "english" : "English"
+    "theme" : "Theme",
+    "light" : "Light",
+    "dark" : "Dark",
+    "azkar":"Azkar",
+    "reset":"Reset"
 }

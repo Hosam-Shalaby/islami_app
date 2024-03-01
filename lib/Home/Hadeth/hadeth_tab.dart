@@ -35,7 +35,7 @@ class _HadethTabState extends State<HadethTab> {
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: Text(
-                  AppLocalizations.of(context)!.ahadeth,
+                  AppLocalizations.of(context)!.hadeth,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
               ),
@@ -47,7 +47,7 @@ class _HadethTabState extends State<HadethTab> {
               Expanded(
                 child: ListView.separated(
                     itemBuilder: (context, index) =>
-                        HadethTitle(hadeth: ahadeth[index]),
+                        HadethTitle(hadeth: ahadeth[index],),
                     separatorBuilder: (context, index) => Container(
                         margin: const EdgeInsets.symmetric(horizontal: 33),
                         color: Theme.of(context).dividerColor,

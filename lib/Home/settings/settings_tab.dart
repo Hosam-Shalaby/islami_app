@@ -1,3 +1,5 @@
+// ignore_for_file: unrelated_type_equality_checks
+
 import 'package:flutter/material.dart';
 import 'package:islamic/Home/Providers/settings_provider.dart';
 import 'package:islamic/Home/settings/language_bottom_sheet.dart';
