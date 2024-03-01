@@ -254,12 +254,12 @@ class QuranTab extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'عدد الآيات',
+              ' أسم السـورة',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             VerticalDivider(color: Theme.of(context).dividerColor, width: 50),
             Text(
-              ' أسم السورة',
+              'عدد الآيات',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             // Divider(color: Color(0xFFB7935F)),

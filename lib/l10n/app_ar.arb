@@ -1,15 +1,21 @@
+
 {
-    "app_title" : "إسلامي",
-    "quran_tab" : "قرآن",
-    "hadeth_tab" : "حديث",
-    "sebha_tab" : "سبحة",
-    "radio_tab" : "راديو",
-    "settings_tab" : "الإعدادات",
-    "theme" : "النمط",
+    "islami" : "إسـلامي",
+    "quran" : "القرآن",
+    "suraName" : "اسم السورة",
+    "suraNumber" : "رقم السورة",
+    "hadeth" : "الاحـاديث النبـوية",
+    "tasbeh" : "التسبيح",
+    "numberOfTasbeh" : "عدد التسبيحات",
+    "radio" : "الراديو",
+    "quranRadioStation" : "إذاعة القرآن الكريم",
+    "settings" : "الإعدادات",
     "language" : "اللغة",
-    "ahadeth" : "الأحاديث",
-    "dark" : "مظلم",
-    "light" : "مضئ",
+    "english" : "الإنجليزية",
     "arabic" : "العربية",
-    "english" : "الانجليزية"
+    "theme" : "النمط",
+    "light" : "نهاري",
+    "dark" : "ليلي",
+    "azkar":"آذكار",
+    "reset":"إعادة"
 }

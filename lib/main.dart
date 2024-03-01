@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:islamic/Home/Compass/compass.dart';
 import 'package:islamic/Home/Hadeth/hadeth_details_screen.dart';
 import 'package:islamic/Home/home_screen.dart';
 import 'package:provider/provider.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
           SuraContent.routeName: (context) => const SuraContent(),
           HadethDetailsScreen.routeName: (context) =>
               const HadethDetailsScreen(),
+          Compass.routeName: (context) => const Compass(),
         },
         initialRoute: SplashScreen.routeName,
         debugShowCheckedModeBanner: false,
