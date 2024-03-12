@@ -18,17 +18,15 @@ class SettingsProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // String getBackGround() {
-  //   return currentTheme == ThemeMode.light
-  //       ? 'assets/images/default_bg.png'
-  //       : 'assets/images/dark_bg.png';
-  // }
   bool isDark() => currentTheme == ThemeMode.dark;
-  bool isEnglish() => currentLanguage == const Locale('en');
+  // bool isEnglish() => currentLanguage == const Locale('en');
 
   String backgroundImage() {
     return isDark()
         ? 'assets/images/background_dark.png'
         : 'assets/images/default_bg.png';
   }
+
+  
+
 }

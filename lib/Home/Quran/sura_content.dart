@@ -33,7 +33,10 @@ class _SuraContentState extends State<SuraContent> {
                     image: AssetImage(settingsProvider.backgroundImage()))),
             child: Scaffold(
               appBar: AppBar(
-                title: Text(args.Title),
+                title: Text(
+                  args.Title,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
               ),
               body: Padding(
                 padding: const EdgeInsets.all(8.0),

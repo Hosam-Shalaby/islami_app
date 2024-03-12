@@ -19,7 +19,11 @@ class HadethDetailsScreen extends StatelessWidget {
               fit: BoxFit.fill,
               image: AssetImage(settingsProvider.backgroundImage()))),
       child: Scaffold(
-        appBar: AppBar(title:  Text((AppLocalizations.of(context)!.islami))),
+        appBar: AppBar(
+            title: Text(
+          (AppLocalizations.of(context)!.islami),
+          style: Theme.of(context).textTheme.bodyMedium,
+        )),
         body: SingleChildScrollView(
           child: Card(
               color: Theme.of(context).cardColor,

@@ -2,7 +2,6 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:islamic/Home/Azkar/azkar.dart';
 import 'package:islamic/Home/Providers/settings_provider.dart';
 import 'package:islamic/Home/widgets/slider_image.dart';
@@ -10,14 +9,12 @@ import 'package:provider/provider.dart';
 
 class AppScreen extends StatefulWidget {
   const AppScreen({super.key});
-  // static const String routeName = 'AppScreen';
 
   @override
   State<AppScreen> createState() => _AppScreenState();
 }
 
 class _AppScreenState extends State<AppScreen> {
-  List<String> ahadeth = [];
   List<String> azkar = [
     // 'أصبحنا على فطرة الإسلام، وعلى كلمة الإخلاص، وعلى دين نبينا محمد صلى الله عليه وسلم، وعلى ملة أبينا إبراهيم حنيفًا مسلمًا وما كان من المشركين',
     'اللهم بك أصبحنا، وبك أمسينا، وبك نحيا، وبك نموت، وإليك المصير',
@@ -59,113 +56,95 @@ class _AppScreenState extends State<AppScreen> {
   Widget build(BuildContext context) {
     var settingsProvider = Provider.of<SettingsProvider>(context);
 
-    if (ahadeth.isEmpty) {
-      loadHadethFile();
-    }
-    return ahadeth.isEmpty
-        ? const Center(child: CircularProgressIndicator())
-        : Column(
-            children: [
-              const SizedBox(height: 25),
-              CarouselSlider(
-                options: CarouselOptions(
-                  enlargeCenterPage: true,
-                  pauseAutoPlayOnManualNavigate: true,
-                  autoPlay: true,
-                  viewportFraction: 0.8,
-                  autoPlayInterval: const Duration(seconds: 3),
-                  autoPlayAnimationDuration: const Duration(milliseconds: 6000),
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                ),
-                items: [
-                  SliderImage(
-                    img: 'assets/App/2.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/3.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/4.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/5.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/6.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/7.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/8.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/9.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/10.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/11.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/12.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/13.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/14.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/15.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/16.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/17.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/18.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/19.png',
-                  ),
-                  SliderImage(
-                    img: 'assets/App/20.png',
-                  ),
+    return Column(
+      children: [
+        const SizedBox(height: 25),
+        CarouselSlider(
+          options: CarouselOptions(
+            enlargeCenterPage: true,
+            pauseAutoPlayOnManualNavigate: true,
+            autoPlay: true,
+            viewportFraction: 0.8,
+            autoPlayInterval: const Duration(seconds: 3),
+            autoPlayAnimationDuration: const Duration(milliseconds: 6000),
+            autoPlayCurve: Curves.fastOutSlowIn,
+          ),
+          items: [
+            SliderImage(
+              img: 'assets/App/4.png',
+            ),
+            SliderImage(
+              img: 'assets/App/5.png',
+            ),
+            SliderImage(
+              img: 'assets/App/2.png',
+            ),
+            SliderImage(
+              img: 'assets/App/3.png',
+            ),
+            SliderImage(
+              img: 'assets/App/6.png',
+            ),
+            SliderImage(
+              img: 'assets/App/7.png',
+            ),
+            SliderImage(
+              img: 'assets/App/8.png',
+            ),
+            SliderImage(
+              img: 'assets/App/9.png',
+            ),
+            SliderImage(
+              img: 'assets/App/10.png',
+            ),
+            SliderImage(
+              img: 'assets/App/11.png',
+            ),
+            SliderImage(
+              img: 'assets/App/12.png',
+            ),
+            SliderImage(
+              img: 'assets/App/13.png',
+            ),
+            SliderImage(
+              img: 'assets/App/14.png',
+            ),
+            SliderImage(
+              img: 'assets/App/15.png',
+            ),
+            SliderImage(
+              img: 'assets/App/16.png',
+            ),
+            SliderImage(
+              img: 'assets/App/17.png',
+            ),
+            SliderImage(
+              img: 'assets/App/18.png',
+            ),
+            SliderImage(
+              img: 'assets/App/19.png',
+            ),
+            SliderImage(
+              img: 'assets/App/20.png',
+            ),
 
-                  // ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              Expanded(
-                child: ListView.separated(
-                    itemBuilder: (context, index) => Azkar(
-                          zekr: azkar[index],
-                        ),
-                    separatorBuilder: (context, index) => Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 33),
-                        color: Theme.of(context).dividerColor,
-                        width: double.infinity,
-                        height: 2),
-                    itemCount: azkar.length),
-              )
-            ],
-          );
-  }
-
-  void loadHadethFile() async {
-    String fileContent =
-        await rootBundle.loadString('assets/files/ahadeth.txt');
-    List<String> allAhadeth = fileContent.trim().split('#');
-    for (int i = 0; i < allAhadeth.length; i++) {
-      List<String> hadethLines = allAhadeth[i].trim().split('\n');
-      hadethLines.removeAt(0);
-      String hadethContent = hadethLines.join('\n');
-      ahadeth.add(hadethContent);
-    }
-    setState(() {});
+            // ),
+          ],
+        ),
+        const SizedBox(height: 20),
+        Expanded(
+          child: ListView.separated(
+              itemBuilder: (context, index) => Azkar(
+                    zekr: azkar[index],
+                  ),
+              separatorBuilder: (context, index) => Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 33),
+                  color: Theme.of(context).dividerColor,
+                  width: double.infinity,
+                  height: 2),
+              itemCount: azkar.length),
+        )
+      ],
+    );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic/Home/Compass/compass.dart';
 import 'package:islamic/Home/Hadeth/hadeth_details_screen.dart';
+import 'package:islamic/Home/PrayTimes/pray_time.dart';
 import 'package:islamic/Home/home_screen.dart';
 import 'package:provider/provider.dart';
 import 'Home/Providers/settings_provider.dart';
@@ -12,7 +13,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-      create: (context) => SettingsProvider(), child: const MyApp()));
+      create: (context) => SettingsProvider(),
+       child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -38,6 +40,7 @@ class MyApp extends StatelessWidget {
         darkTheme: MyThemeData.darkTheme,
         routes: {
           HomeScreen.routeName: (context) => const HomeScreen(),
+          PrayTimes.routeName: (context) => const PrayTimes(),
           SplashScreen.routeName: (context) => const SplashScreen(),
           SuraContent.routeName: (context) => const SuraContent(),
           HadethDetailsScreen.routeName: (context) =>

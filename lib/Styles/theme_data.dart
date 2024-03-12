@@ -54,10 +54,12 @@ class MyThemeData {
               fontSize: 17,
               color: Colors.white),
           bodyMedium: TextStyle(
-              fontFamily: 'DecoType',
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 224, 207, 52))),
+            fontFamily: 'DecoType',
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            // color: Color.fromARGB(255, 224, 207, 52),
+          )),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           selectedIconTheme: IconThemeData(size: 40),
           selectedItemColor: Color.fromARGB(255, 218, 202, 60),

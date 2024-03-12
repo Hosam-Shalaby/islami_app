@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:islamic/Home/Providers/settings_provider.dart';
-import 'package:provider/provider.dart';
 
 class SebhaTab extends StatefulWidget {
   const SebhaTab({super.key});
@@ -17,7 +15,7 @@ class _SebhaTabState extends State<SebhaTab> {
   List<String> texts = ['سبحان الله', 'الحمدلله', ' الله أكبر'];
   @override
   Widget build(BuildContext context) {
-    var settingsProvider = Provider.of<SettingsProvider>(context);
+    // var settingsProvider = Provider.of<SettingsProvider>(context);
 
     return Scaffold(
       body: Column(
@@ -121,4 +119,3 @@ class _SebhaTabState extends State<SebhaTab> {
     setState(() {});
   }
 }
-

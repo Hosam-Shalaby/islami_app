@@ -17,5 +17,10 @@
     "light" : "Light",
     "dark" : "Dark",
     "azkar":"Azkar",
-    "reset":"Reset"
+    "fajr":"Fajr",
+    "dhuhr":"Dhuhr",
+    "asr":"Asr",
+    "maghrib":"Maghrib",
+    "isha":"Isha",
+    "prayTimes":"Pray Times"
 }

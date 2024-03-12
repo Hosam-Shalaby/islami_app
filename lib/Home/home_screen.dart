@@ -6,8 +6,9 @@ import 'package:islamic/Home/ChangeThemeIcon/change_language_icon.dart';
 import 'package:islamic/Home/ChangeThemeIcon/change_theme_icon.dart';
 import 'package:islamic/Home/Compass/compass.dart';
 import 'package:islamic/Home/Hadeth/hadeth_tab.dart';
+import 'package:islamic/Home/PrayTimes/pray_time.dart';
 import 'package:islamic/Home/Quran/quran_tab.dart';
-import 'package:islamic/Home/Radio/radio_tab.dart';
+import 'package:islamic/Home/Radio/radio_view.dart';
 import 'package:islamic/Home/Sebha/sebha_tab.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamic/Home/settings/settings_tab.dart';
@@ -32,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const HadethTab(),
     const AppScreen(),
     const SebhaTab(),
-    const RadioTab(),
+    const RadioView(),
     const SettingsTab(),
   ];
 
@@ -60,9 +61,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.all(5),
                   child: Image.asset('assets/images/compass.png')),
             ),
-            title: Text(
-              AppLocalizations.of(context)!.islami,
-              style: Theme.of(context).textTheme.bodyMedium,
+            title: Container(
+              padding: const EdgeInsets.all(7),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(55),
+                  border: Border.all(color: Colors.white)),
+              child: InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, PrayTimes.routeName);
+                },
+                child: Text(
+                  AppLocalizations.of(context)!.prayTimes,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ),
             )),
         body: tabs[selectedIndexItem],
         bottomNavigationBar: BottomNavigationBar(

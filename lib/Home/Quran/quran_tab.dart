@@ -273,19 +273,22 @@ class QuranTab extends StatelessWidget {
         Expanded(
             flex: 2,
             child: ListView.separated(
-              itemBuilder: (context, index) =>
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                SuraName(
-                  suraArgs: SuraArgs(Title: suraNames[index], Index: index),
-                ),
-                VerticalDivider(
-                    color: Theme.of(context).dividerColor,
-                    width: 50,
-                    thickness: 1),
-                SuraName(
-                  suraArgs: SuraArgs(Title: versesNumber[index], Index: index),
-                ),
-              ]),
+              itemBuilder: (context, index) => Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SuraName(
+                      suraArgs: SuraArgs(Title: suraNames[index], Index: index),
+                    ),
+                    VerticalDivider(
+                        color: Theme.of(context).dividerColor,
+                        width: 1,
+                        thickness: 1),
+                    SuraName(
+                      suraArgs:
+                          SuraArgs(Title: versesNumber[index], Index: index),
+                    ),
+                  ]),
               itemCount: suraNames.length,
               separatorBuilder: (BuildContext context, int index) => Container(
                 margin:
