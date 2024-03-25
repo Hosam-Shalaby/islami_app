@@ -1,24 +1,41 @@
+import 'package:Ayat/Home/Compass/compass.dart';
+import 'package:Ayat/Home/Hadeth/hadeth_details_screen.dart';
+import 'package:Ayat/Home/PrayTimes/pray_time.dart';
+import 'package:Ayat/Home/Quran/QuranNewTap/constant.dart';
+import 'package:Ayat/Home/Quran/QuranNewTap/quran_screen.dart';
+import 'package:Ayat/Home/Quran/QuranNewTap/settings.dart';
+import 'package:Ayat/Home/home_screen.dart';
+import 'package:Ayat/Home/widgets/sura_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:islamic/Home/Compass/compass.dart';
-import 'package:islamic/Home/Hadeth/hadeth_details_screen.dart';
-import 'package:islamic/Home/PrayTimes/pray_time.dart';
-import 'package:islamic/Home/home_screen.dart';
+
 import 'package:provider/provider.dart';
 import 'Home/Providers/settings_provider.dart';
-import 'Home/Quran/sura_content.dart';
 import 'Splash/splash_screen.dart';
 import 'Styles/theme_data.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-      create: (context) => SettingsProvider(),
-       child: const MyApp()));
+      create: (context) => SettingsProvider(), child: const MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await readJson();
+      await getSettings();
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +57,11 @@ class MyApp extends StatelessWidget {
         darkTheme: MyThemeData.darkTheme,
         routes: {
           HomeScreen.routeName: (context) => const HomeScreen(),
+          Settings.routeName: (context) => const Settings(),
+          QuranScreen.routeName: (context) => const QuranScreen(),
           PrayTimes.routeName: (context) => const PrayTimes(),
           SplashScreen.routeName: (context) => const SplashScreen(),
-          SuraContent.routeName: (context) => const SuraContent(),
+          // SuraContent.routeName: (context) => const SuraContent(),
           HadethDetailsScreen.routeName: (context) =>
               const HadethDetailsScreen(),
           Compass.routeName: (context) => const Compass(),

@@ -1,8 +1,9 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:Ayat/Home/Hadeth/hadeth_details_screen.dart';
+import 'package:Ayat/Home/Hadeth/hadeth_tab.dart';
 import 'package:flutter/material.dart';
-import 'package:islamic/Home/Hadeth/hadeth_details_screen.dart';
-import 'package:islamic/Home/Hadeth/hadeth_tab.dart';
+
 
 class HadethTitle extends StatelessWidget {
   HadethTitle({super.key, required this.hadeth});

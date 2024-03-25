@@ -1,5 +1,5 @@
+import 'package:Ayat/Home/Providers/settings_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:islamic/Home/Providers/settings_provider.dart';
 import 'package:provider/provider.dart';
 
 class ChangeLanguageIcon extends StatelessWidget {

@@ -1,10 +1,13 @@
+// ignore_for_file: unused_local_variable
+
 import 'dart:convert';
 
+import 'package:Ayat/Home/Providers/settings_provider.dart';
+import 'package:Ayat/Home/Radio/radio_item.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:islamic/Home/Providers/settings_provider.dart';
-import 'package:islamic/Home/Radio/radio_item.dart';
+
 import 'package:provider/provider.dart';
 
 import 'radios_response.dart';
@@ -37,20 +40,19 @@ class _RadioViewState extends State<RadioView> {
     var theme = Theme.of(context);
     var mediaQuery = MediaQuery.of(context).size;
     var appProvider = Provider.of<SettingsProvider>(context);
-    final audioPlayerProvider = Provider.of<SettingsProvider>(context);
 
     return Column(
       children: [
-        SizedBox(height: mediaQuery.height / 40),
+        // SizedBox(height: mediaQuery.height / 20),
         Image.asset('assets/images/radio_header.png'),
-        const SizedBox(height: 30),
+        const SizedBox(height: 10),
         FutureBuilder<RadiosResponse>(
           future: getRadios(appProvider.currentLanguage),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return Expanded(
                 child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
+                  scrollDirection: Axis.vertical,
                   padding: EdgeInsets.zero,
                   physics: const PageScrollPhysics(),
                   itemCount: snapshot.data!.radios!.length,
