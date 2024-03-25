@@ -1,7 +1,7 @@
+import 'package:Ayat/Home/Providers/settings_provider.dart';
+import 'package:Ayat/Home/Radio/radios_response.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:islamic/Home/Providers/settings_provider.dart';
-import 'package:islamic/Home/Radio/radios_response.dart';
 import 'package:provider/provider.dart';
 
 class RadioItem extends StatefulWidget {
@@ -24,8 +24,8 @@ class _RadioItemState extends State<RadioItem> {
     var appProvider = Provider.of<SettingsProvider>(context);
     var mediaQuery = MediaQuery.of(context).size;
     return Container(
-      height: mediaQuery.height,
-      margin: const EdgeInsets.all(20),
+      height: MediaQuery.of(context).size.height / 4,
+      margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: theme.colorScheme.primary)),
@@ -47,6 +47,7 @@ class _RadioItemState extends State<RadioItem> {
             onTap: () async {
               if (_currentState == 'pause') {
                 await widget.player.play(UrlSource(widget.radioStation.url!));
+                // await widget.player.play(UrlSource(widget.radioStation.url!));
                 _currentState = 'play';
               } else {
                 await widget.player.pause();
@@ -72,7 +73,6 @@ class _RadioItemState extends State<RadioItem> {
               ),
             ),
           ),
-        
         ],
       ),
     );

@@ -1,20 +1,21 @@
 // ignore_for_file: unused_local_variable
 
+import 'package:Ayat/Home/Azkar/azkar.dart';
+import 'package:Ayat/Home/Providers/settings_provider.dart';
+import 'package:Ayat/Home/widgets/slider_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:islamic/Home/Azkar/azkar.dart';
-import 'package:islamic/Home/Providers/settings_provider.dart';
-import 'package:islamic/Home/widgets/slider_image.dart';
+
 import 'package:provider/provider.dart';
 
-class AppScreen extends StatefulWidget {
-  const AppScreen({super.key});
+class AzkarScreen extends StatefulWidget {
+  const AzkarScreen({super.key});
 
   @override
-  State<AppScreen> createState() => _AppScreenState();
+  State<AzkarScreen> createState() => _AzkarScreenState();
 }
 
-class _AppScreenState extends State<AppScreen> {
+class _AzkarScreenState extends State<AzkarScreen> {
   List<String> azkar = [
     // 'أصبحنا على فطرة الإسلام، وعلى كلمة الإخلاص، وعلى دين نبينا محمد صلى الله عليه وسلم، وعلى ملة أبينا إبراهيم حنيفًا مسلمًا وما كان من المشركين',
     'اللهم بك أصبحنا، وبك أمسينا، وبك نحيا، وبك نموت، وإليك المصير',
@@ -55,7 +56,9 @@ class _AppScreenState extends State<AppScreen> {
   @override
   Widget build(BuildContext context) {
     var settingsProvider = Provider.of<SettingsProvider>(context);
-
+var mediaQuery = MediaQuery.of(context).size;
+    var width = mediaQuery.width;
+    var height = mediaQuery.height;
     return Column(
       children: [
         const SizedBox(height: 25),
