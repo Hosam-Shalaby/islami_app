@@ -1,8 +1,9 @@
 import 'dart:async';
 
+import 'package:Ayat/Home/Providers/settings_provider.dart';
+import 'package:Ayat/Home/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:islamic/Home/Providers/settings_provider.dart';
-import 'package:islamic/Home/home_screen.dart';
+
 import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {

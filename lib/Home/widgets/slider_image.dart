@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:Ayat/Home/Providers/settings_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:islamic/Home/Providers/settings_provider.dart';
 
 class SliderImage extends StatelessWidget {
   SliderImage({super.key, required this.img});

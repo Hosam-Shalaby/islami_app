@@ -3,11 +3,11 @@
 import 'dart:async';
 import 'dart:math' show pi;
 
+import 'package:Ayat/Home/widgets/location_error.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_qiblah/flutter_qiblah.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:islamic/Home/widgets/location_error.dart';
 
 class QiblahCompass extends StatefulWidget {
   const QiblahCompass({super.key});

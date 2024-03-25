@@ -1,11 +1,11 @@
 // ignore_for_file: library_private_types_in_public_api, avoid_print, unused_field
 
 import 'dart:convert';
+import 'package:Ayat/Home/PrayTimes/data.dart';
+import 'package:Ayat/Home/PrayTimes/json_connection.dart';
+import 'package:Ayat/Home/Providers/settings_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:islamic/Home/PrayTimes/data.dart';
-import 'package:islamic/Home/PrayTimes/json_connection.dart';
 import 'package:http/http.dart' as http;
-import 'package:islamic/Home/Providers/settings_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -48,6 +48,7 @@ class _PrayTimesState extends State<PrayTimes> {
   @override
   Widget build(BuildContext context) {
     var settingsProvider = Provider.of<SettingsProvider>(context);
+    var theme = Theme.of(context);
 
     return Container(
         decoration: BoxDecoration(
@@ -81,33 +82,79 @@ class _PrayTimesState extends State<PrayTimes> {
                       ),
                     ),
                     const SizedBox(
-                      height: 25,
+                      height: 10,
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: <Widget>[
-                              Text(
-                                AppLocalizations.of(context)!.fajr,
-                                style: Theme.of(context).textTheme.bodyMedium,
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 7),
+                                margin: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    border: Border.all(
+                                        color: theme.colorScheme.primary)),
+                                child: Text(
+                                  AppLocalizations.of(context)!.fajr,
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
                               ),
-                              Text(
-                                AppLocalizations.of(context)!.dhuhr,
-                                style: Theme.of(context).textTheme.bodyMedium,
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 7),
+                                margin: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    border: Border.all(
+                                        color: theme.colorScheme.primary)),
+                                child: Text(
+                                  AppLocalizations.of(context)!.dhuhr,
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
                               ),
-                              Text(
-                                AppLocalizations.of(context)!.asr,
-                                style: Theme.of(context).textTheme.bodyMedium,
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 7),
+                                margin: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    border: Border.all(
+                                        color: theme.colorScheme.primary)),
+                                child: Text(
+                                  AppLocalizations.of(context)!.asr,
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
                               ),
-                              Text(
-                                AppLocalizations.of(context)!.maghrib,
-                                style: Theme.of(context).textTheme.bodyMedium,
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 7),
+                                margin: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    border: Border.all(
+                                        color: theme.colorScheme.primary)),
+                                child: Text(
+                                  AppLocalizations.of(context)!.maghrib,
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
                               ),
-                              Text(
-                                AppLocalizations.of(context)!.isha,
-                                style: Theme.of(context).textTheme.bodyMedium,
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 7),
+                                margin: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    border: Border.all(
+                                        color: theme.colorScheme.primary)),
+                                child: Text(
+                                  AppLocalizations.of(context)!.isha,
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
                               ),
                             ],
                           ),
@@ -116,25 +163,80 @@ class _PrayTimesState extends State<PrayTimes> {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: <Widget>[
-                              Text(
-                                snapshot.data.data.timings.fajr,
-                                style: Theme.of(context).textTheme.bodyMedium,
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 5),
+                                margin: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    border: Border.all(
+                                        color: theme.colorScheme.primary)),
+                                child: Text(
+                                  snapshot.data.data.timings.fajr,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineMedium,
+                                ),
                               ),
-                              Text(
-                                snapshot.data.data.timings.dhuhr,
-                                style: Theme.of(context).textTheme.bodyMedium,
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 5),
+                                margin: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    border: Border.all(
+                                        color: theme.colorScheme.primary)),
+                                child: Text(
+                                  snapshot.data.data.timings.dhuhr,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineMedium,
+                                ),
                               ),
-                              Text(
-                                snapshot.data.data.timings.asr,
-                                style: Theme.of(context).textTheme.bodyMedium,
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 5),
+                                margin: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    border: Border.all(
+                                        color: theme.colorScheme.primary)),
+                                child: Text(
+                                  snapshot.data.data.timings.asr,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineMedium,
+                                ),
                               ),
-                              Text(
-                                snapshot.data.data.timings.maghrib,
-                                style: Theme.of(context).textTheme.bodyMedium,
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 5),
+                                margin: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    border: Border.all(
+                                        color: theme.colorScheme.primary)),
+                                child: Text(
+                                  snapshot.data.data.timings.maghrib,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineMedium,
+                                ),
                               ),
-                              Text(
-                                snapshot.data.data.timings.isha,
-                                style: Theme.of(context).textTheme.bodyMedium,
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 5),
+                                margin: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    border: Border.all(
+                                        color: theme.colorScheme.primary)),
+                                child: Text(
+                                  snapshot.data.data.timings.isha,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineMedium,
+                                ),
                               ),
                             ],
                           ),
